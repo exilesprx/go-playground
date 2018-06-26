@@ -2,21 +2,19 @@ package main
 
 import (
 	"fmt"
-)
 
-var message = "Hello"
+	"github.com/exilesprx/go-playground/hworld"
+
+	"github.com/exilesprx/go-playground/pointers"
+)
 
 func main() {
 
-	ending := "World"
-
-	message += " " + ending
-
-	fmt.Println(message)
+	hworld.PrintMessage()
 
 	value := 0
 
-	increment(&value)
+	pointers.Increment(&value)
 
 	fmt.Println(value)
 
@@ -26,19 +24,7 @@ func main() {
 
 	fmt.Printf("X: %d Y: %d", x, y)
 
-	swap(&x, &y)
+	pointers.Swap(&x, &y)
 
 	fmt.Printf("X: %d Y: %d", x, y)
-}
-
-func increment(value *int) {
-	*value = *value + 1
-}
-
-func swap(x *int, y *int) {
-	tmp := *x
-
-	*x = *y
-
-	*y = tmp
 }
